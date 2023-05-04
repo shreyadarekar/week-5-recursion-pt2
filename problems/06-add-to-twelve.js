@@ -12,11 +12,17 @@ addToTwelve([1, 12, 4, 7, 6]); // false
 addToTwelve([1]); // false
 ***********************************************************************/
 
-
 function addToTwelve(arr) {
-  // Your code here
-}
+  if (arr.length <= 1) return false;
+  let lastEle = arr.pop();
+  // console.log(arr);
+  // console.log(lastEle);
+  let arrLastEle = arr[arr.length - 1];
+  // console.log(arrLastEle);
+  if (lastEle + arrLastEle === 12) return true;
 
+  return addToTwelve(arr);
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
